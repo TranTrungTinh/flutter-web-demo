@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter_web/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:movie_web/podo/Movies.dart';
-import 'package:movie_web/util/constants.dart';
+import 'package:movie_web/models/Movies.dart';
+import 'package:movie_web/utils/constants.dart';
 
 class DetailPage extends StatefulWidget {
 
@@ -17,7 +17,7 @@ class DetailPage extends StatefulWidget {
 
 class _DetailState extends State<DetailPage> {
 
-  bool _loading;
+  bool _loading = false;
   Map response;
   Movie movie;
 
@@ -52,7 +52,7 @@ class _DetailState extends State<DetailPage> {
   @override
   void initState() {
     super.initState();
-    getMovie();
+    // getMovie();
   }
 
   @override

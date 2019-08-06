@@ -1,18 +1,14 @@
 import 'package:flutter_web/material.dart';
-
-import 'package:movie_web/ui/home.dart';
+import 'package:movie_web/router.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
 
-  String title = "Flutter Cinema";
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '$title',
-      home: HomePage(title: "$title"),
+      title: 'Flutter Cinema',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Orbitron',
@@ -22,28 +18,8 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.redAccent,
         backgroundColor: Colors.grey[100],
       ),
-      // routes: {
-      //   '/': (context) => HomePage(title: "$title"),
-      //   '/movie': (context) => DetailPage(),
-      //   '/about': (context) => AboutPage()
-      // },
-      // onGenerateRoute: _getRoute
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute
     );
   }
 }
-
-// Route<dynamic> _getRoute(RouteSettings settings) {
-//     if (settings.name == '/movie') {
-//         // FooRoute constructor expects SomeObject
-//         return _buildRoute(settings, DetailPage());
-//     }
-
-//     return null;
-// }
-
-// MaterialPageRoute _buildRoute(RouteSettings settings, Widget builder) {
-//     return MaterialPageRoute(
-//         settings: settings,
-//         builder: (ctx) => builder
-//     );
-// }

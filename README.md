@@ -1,4 +1,4 @@
-# 🎬 FlutterWeb-Cinema
+# 🎬 Flutter Cinema
 A very simple Movies webpage made with Flutter Web.
 
 ## 📸 ScreenShots

@@ -3,12 +3,9 @@ import 'dart:convert';
 
 import 'package:flutter_web/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:movie_web/podo/Movies.dart';
-import 'package:movie_web/util/constants.dart';
-import 'package:movie_web/util/responsive.dart';
-
-import 'package:movie_web/ui/about-us.dart';
-import 'package:movie_web/ui/detail.dart';
+import 'package:movie_web/models/Movies.dart';
+import 'package:movie_web/utils/constants.dart';
+import 'package:movie_web/utils/responsive.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -95,9 +92,7 @@ class _HomeState extends State<HomePage> {
           FlatButton(
             child: Text("About Us", style: TextStyle(color: Colors.white, fontSize: 17.0, fontFamily: 'Avenir')),
             onPressed: (){
-              // Navigator.pushNamed(context, '/about');
-              Navigator.push(context, MaterialPageRoute(builder: (context) => AboutPage()));
-              // print("pressed");
+              Navigator.of(context).pushNamed('/about');
             },
           ),
 
@@ -150,8 +145,7 @@ class _HomeState extends State<HomePage> {
                 child: GestureDetector(
                   onTap: () {
                     // Navigator.pushNamed(context, '/movie', arguments: movie.id);
-                    // print(movie.title);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(id: movie.id)));
+                    Navigator.of(context).pushNamed('/movie', arguments: movie.id);
                   },
                   child: Image.network(imageURL, fit: BoxFit.cover ),
                 ),
