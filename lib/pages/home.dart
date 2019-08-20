@@ -1,7 +1,7 @@
 import 'dart:convert';
-// import 'dart:html' as html;
 
 import 'package:flutter_web/material.dart';
+import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_web/models/Movies.dart';
 import 'package:movie_web/utils/constants.dart';
@@ -140,7 +140,8 @@ class _HomeState extends State<HomePage> {
               child: GridTile(
                 footer: GridTileBar(
                   backgroundColor: Colors.black45,
-                  title: Text(movie.title)
+                  title: Text(movie.title, style: TextStyle(fontFamily: 'Orbitron', fontSize: 20.0, color: Colors.white )),
+                  subtitle: Text(DateFormat.yMMMMd().format(DateTime.parse(movie.releaseDate)), style: TextStyle(color: Colors.white54),)
                 ),
                 child: GestureDetector(
                   onTap: () {
